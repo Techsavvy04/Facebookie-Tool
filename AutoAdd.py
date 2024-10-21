@@ -82,3 +82,4 @@ if __name__ == "__main__":
     print(f'FACEBOOK:{usname} | ID {id}')
     while True:
         fb.autoAddFriend(dl)
+    
