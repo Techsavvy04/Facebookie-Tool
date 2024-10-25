@@ -29,7 +29,14 @@ class TDS:
         try:
             return dataGetTaskList.json()
         except:return 'Không thể lấy danh sách nhiệm vụ'
-    
-token='TDSQfiYjclZXZzJiOiIXZ2V2ciwiI5JXZt9meiojIyV2c1Jye'
-tds=TDS(token)
-tds.getTaskList('ss')
+    def claimCoin(self,type,idJob):
+        url=f'https://traodoisub.com/api/coin/?type={type}&id={idJob}&access_token={self.token}'
+        dataCliamCoin=requests.get(url)
+        if 'error' in dataCliamCoin.json():
+            return (dataCliamCoin.json()['error'])
+        return(dataCliamCoin.json())
+# #100012111467811_1980452645701765
+# token='TDSQfiYjclZXZzJiOiIXZ2V2ciwiI5JXZt9meiojIyV2c1Jye'
+# tds=TDS(token)
+# like=tds.getTaskList('like')
+# print(like)
